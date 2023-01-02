@@ -11,7 +11,7 @@
 }
   
   html {
-   padding: 0 22px;
+   padding: 0;
   }
   
   /* Works on Firefox */
@@ -93,11 +93,12 @@ html, body {
 }
 
 body {
-    margin-top: 80px;
+    margin-top: 60px;
     font-size: 16px;
     line-height: 1.4;
     color: var(--text-color);
     margin-bottom: 120px;
+    padding: 0;
 }
 
 /**** GLOBAL *******************************/
@@ -124,10 +125,10 @@ body {
 }
 
 
-.intro, .what_i_do {
-    max-width: 600px;
+.intro, .what_i_do, .bookmarks, .mail_me {
+    max-width: 640px;
     margin: auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 
@@ -150,9 +151,28 @@ body {
     margin-top: 8px;
 }
 
+/*** HERO SLIDER **********************************/
+.hero_slider {
+    height: 375px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 640px 1fr;
+    justify-content: center;
+    gap: 0;
+}
+
+.slide_wrap {
+    background-color: #eee;
+    width: 100%;
+    grid-column: 1 / 4;
+    overflow: auto;
+    white-space: nowrap;
+    cursor: grab;
+}
+
 /**** WHAT I DO *************************************/
 .what_i_do {
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .what_i_do h1 {
@@ -181,7 +201,6 @@ body {
 
 /***** BOOKMARKS **************************/
 .bookmarks {
-    max-width: 600px;
     margin: 100px auto auto auto;
 }
 .bookmarks h1 {
@@ -268,11 +287,7 @@ background-color: var(--page-bg-color);
 }
 
 /* MAIL ME ******************************** */
-.mail_me {
-    max-width: 600px;
-    margin: auto;
-}
-.mail_me_wrap {
+.mail_me .mail_me_wrap {
     background-color: var(--border-color);
     display: flex;
     flex-direction: column;
