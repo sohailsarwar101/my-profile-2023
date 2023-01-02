@@ -22,7 +22,7 @@
   
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
   }
  
 *::-webkit-scrollbar-track {
@@ -40,10 +40,11 @@
 :root {
   --color-mode: "light";
   --page-bg-color: #fafafa;
-  --text-color: #333;
+  --text-color: #1b2832;
+  --text-muted: #374956;
   --invers-color: #fbfbfe;
   --text-muted: #6f7586;
-  --link-color: #273FDE;
+  --link-color: #1227e7;
   --border-color: #eeeff2;
   --border-hover: #d0d0d3;
   --img-filter: invert(0%);
@@ -56,11 +57,12 @@
   }
   :root:not([data-user-color-scheme]) {
       --color-mode: "dark";
-      --page-bg-color: #14191f;
+      --page-bg-color: #11191f;
       --bg-light: #1c232a;
-      --text-color: #c5c7cf;
-      --invers-color: #14191f;
+      --text-color: #e1e6eb;
+      --invers-color: #1b2832;
       --text-muted: #616b77;
+      --link-color: #1227e7;
       --border-color: #212730;
       --border-hover: #363f4d;
       --img-filter:  invert(75%) brightness(160%);
@@ -70,11 +72,12 @@
 }
 [data-user-color-scheme="dark"] {
 --color-mode: "dark";
---page-bg-color: #151a20;
+--page-bg-color: #11191f;
 --bg-light: #1c232a;
---text-color: #c5c7cf;
---invers-color: #14191f;
+--text-color: #e1e6eb;
+--invers-color: #1b2832;
 --text-muted: #616b77;
+--link-color: #1227e7;
 --border-color: #212730;
 --border-hover: #363f4d;
 --img-filter:  invert(75%) brightness(160%);
@@ -82,6 +85,210 @@
 --shadow-large: 0 4px 8px 0px rgba(0, 0, 0, 0.1);
 }
 
-html {
+html, body {
   background-color: var(--page-bg-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
 }
+
+body {
+    margin-top: 80px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--text-color);
+    margin-bottom: 120px;
+}
+
+/**** GLOBAL *******************************/
+.button_link {
+    margin: 30px 0;
+    font-family: inherit;
+}
+
+.button_link a {
+    font-size: 16px;
+    background-color: var(--text-color);
+    padding: 6px 15px 7px 15px;
+    text-decoration: none;
+    border-radius: 100px;
+    color: var(--invers-color);
+    font-size: 13px;
+    font-weight: 400;
+    transition: all 0s;
+}
+
+.button_link a:hovder {
+    transform: translateY(-1px);
+    transition: all 0s;
+}
+
+
+.intro, .what_i_do {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+
+/**** INTRO *******************************/
+.intro img{
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+.intro h1 {
+    font-weight: 640;
+    font-size: 16px;
+    margin-top: 15px;
+    color: var(--text-muted);
+}
+
+.intro h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/**** WHAT I DO *************************************/
+.what_i_do {
+    margin-top: 100px;
+}
+
+.what_i_do h1 {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+.service_item {
+    margin-top: 30px;
+}
+
+.service_item h2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.service_item p {
+    font-size: 14px;
+    font-weight: 200;
+    margin-top: 7px;
+}
+
+.button_link {
+    margin-top: 45px;
+}
+
+/***** BOOKMARKS **************************/
+.bookmarks {
+    max-width: 600px;
+    margin: 100px auto auto auto;
+}
+.bookmarks h1 {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+.bookmarks ul {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 5px 20px;
+    margin-top: 15px;
+    max-height: 395px;
+    min-height: 395px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+  
+.bookmarks ul li {
+    padding: 8px 0;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bookmarks ul li:last-child {
+    border-bottom: none;
+}
+
+.bookmarks ul li a{
+    text-decoration: none;
+    padding: 10px 0 12px 0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--text-color);
+}
+
+.bookmarks ul li a h2 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.bookmarks ul li a span {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.bookmarks ul li a span img {
+    max-width: 14px;
+    height: auto;
+    margin-top: 3px;
+}
+
+.bookmarks ul li a #link_icon {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 20px;
+    right: 0;
+    transform: rotate(35deg);
+    color: var(--text-muted);
+    opacity: 0;
+}
+
+.bookmarks ul li a:hover #link_icon {
+    opacity: 1;
+}
+
+.bookmarks select {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 7px 10px;
+    color: var(--text-color);
+    margin-top: 30px;
+}
+
+.bookmarks select option {
+color: var(--text-color);
+background-color: var(--page-bg-color);
+}
+
+/* MAIL ME ******************************** */
+.mail_me {
+    max-width: 600px;
+    margin: auto;
+}
+.mail_me_wrap {
+    background-color: var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 25px 20px 15px 20px;
+    border-radius: 6px;
+    color:var(--text-color);
+    margin-top: 100px;
+}
+
+.mail_me p {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.mail_me .button_link {
+    margin: 20px 0;
+}
+  
