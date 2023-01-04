@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +8,16 @@
   margin: 0;
   padding: 0;
 }
+
+* a, a:hover, a:visited{
+    color: var(--text-color);
+    text-decoration: none;
+}
   
-  html {
-   padding: 0;
-  }
+html {
+    padding: 0;
+    scroll-behavior: smooth;
+}
   
   /* Works on Firefox */
 * {
@@ -22,7 +27,8 @@
   
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 4px;
+    width: 5px;
+    height: 5px;
   }
  
 *::-webkit-scrollbar-track {
@@ -31,7 +37,7 @@
   
 *::-webkit-scrollbar-thumb {
     background-color: var(--bg-light);
-    border-radius: 0px;
+    border-radius: 10px;
     border: 0px;
     border: none;
 }
@@ -40,11 +46,13 @@
 :root {
   --color-mode: "light";
   --page-bg-color: #fafafa;
+  --bg-light: #eeeff2;
   --text-color: #1b2832;
   --text-muted: #374956;
   --invers-color: #fbfbfe;
   --text-muted: #6f7586;
   --link-color: #1227e7;
+  --bg-lighter: #f1f1f4;
   --border-color: #eeeff2;
   --border-hover: #d0d0d3;
   --img-filter: invert(0%);
@@ -58,11 +66,12 @@
   :root:not([data-user-color-scheme]) {
       --color-mode: "dark";
       --page-bg-color: #11191f;
-      --bg-light: #1c232a;
+      --bg-light: #26303a;
       --text-color: #e1e6eb;
       --invers-color: #1b2832;
       --text-muted: #616b77;
       --link-color: #1227e7;
+      --bg-lighter: #141e25;
       --border-color: #212730;
       --border-hover: #363f4d;
       --img-filter:  invert(75%) brightness(160%);
@@ -73,11 +82,12 @@
 [data-user-color-scheme="dark"] {
 --color-mode: "dark";
 --page-bg-color: #11191f;
---bg-light: #1c232a;
+--bg-light: #26303a;
 --text-color: #e1e6eb;
 --invers-color: #1b2832;
 --text-muted: #616b77;
 --link-color: #1227e7;
+--bg-lighter: #141e25;
 --border-color: #212730;
 --border-hover: #363f4d;
 --img-filter:  invert(75%) brightness(160%);
@@ -110,7 +120,7 @@ body {
 .button_link a {
     font-size: 16px;
     background-color: var(--text-color);
-    padding: 6px 15px 7px 15px;
+    padding: 10px 20px 11px 20px;
     text-decoration: none;
     border-radius: 100px;
     color: var(--invers-color);
@@ -125,12 +135,11 @@ body {
 }
 
 
-.intro, .what_i_do, .bookmarks, .mail_me {
+.intro, .what_i_do, .bookmarks, .mail_me, .what_i_did {
     max-width: 640px;
     margin: auto;
     padding: 0 20px;
 }
-
 
 /**** INTRO *******************************/
 .intro img{
@@ -148,26 +157,34 @@ body {
 .intro h2{
     font-size: 20px;
     font-weight: 600;
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 /*** HERO SLIDER **********************************/
 .hero_slider {
-    height: 375px;
     margin-top: 50px;
-    display: grid;
-    grid-template-columns: 1fr 640px 1fr;
-    justify-content: center;
-    gap: 0;
 }
-
-.slide_wrap {
-    background-color: #eee;
-    width: 100%;
-    grid-column: 1 / 4;
-    overflow: auto;
-    white-space: nowrap;
+ 
+.slider_inner {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    margin-top: 15px;
+    overflow-x: scroll;
+    padding-bottom: 7px;
     cursor: grab;
+    scrollbar-width: thin;
+    overflow-y: hidden;
+    
+ }
+ 
+.slider_inner .slider_item{
+     height: 300px;
+     min-width: 460px;
+     background-color: var(--bg-light);
+     background-repeat: none;
+     background-size: cover;
+     position: relative;
 }
 
 /**** WHAT I DO *************************************/
@@ -197,11 +214,62 @@ body {
 
 .button_link {
     margin-top: 45px;
+    transform: translateY(0);
+}
+
+.button_link:hover {
+    transform: translateY(-1px);
+}
+
+/**** WHAT I DID *************************************/
+.what_i_did {
+    margin-top: 80px;
+}
+
+.what_i_did h1 {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+.project_item {
+    margin-top: 30px;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    background-color: var(--bg-lighter);
+}
+
+.project_item h2 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.project_item p {
+    font-size: 14px;
+    font-weight: 200;
+    margin-top: 7px;
+}
+
+.project_item #link_icon {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 15px;
+    right: 13px;
+    transform: rotate(35deg);
+    color: var(--text-muted);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.project_item:hover #link_icon {
+    opacity: 1;
+    transition: all 0.3s;
 }
 
 /***** BOOKMARKS **************************/
 .bookmarks {
-    margin: 100px auto auto auto;
+    margin: 80px auto auto auto;
 }
 .bookmarks h1 {
     font-size: 16px;
@@ -243,6 +311,11 @@ body {
     font-weight: 400;
 }
 
+.bookmarks ul li a:hover h2 {
+    text-decoration: underline;
+    text-decoration-color: var(--text-muted);
+}
+
 .bookmarks ul li a span {
     font-size: 12px;
     color: var(--text-muted);
@@ -266,10 +339,12 @@ body {
     transform: rotate(35deg);
     color: var(--text-muted);
     opacity: 0;
+    transition: all 0.3s;
 }
 
 .bookmarks ul li a:hover #link_icon {
     opacity: 1;
+    transition: all 0.3s;
 }
 
 .bookmarks select {
@@ -288,22 +363,25 @@ background-color: var(--page-bg-color);
 
 /* MAIL ME ******************************** */
 .mail_me .mail_me_wrap {
-    background-color: var(--border-color);
+    background-color: var(--bg-lighter);
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding: 25px 20px 15px 20px;
+    padding: 30px 20px 20px 30px;
     border-radius: 6px;
-    color:var(--text-color);
+    color: var(--text-color);
     margin-top: 100px;
 }
 
 .mail_me p {
     font-size: 16px;
     font-weight: 200;
+    text-align: left;
+    max-width: 450px;
+    margin: 0;
 }
 
 .mail_me .button_link {
-    margin: 20px 0;
+    margin: 25px 0 20px 0;
 }
   

@@ -51,7 +51,7 @@ myBookmarks();
 
 
 
-document.querySelectorAll('.slide_wrap').forEach(item => {
+document.querySelectorAll('.slider_inner').forEach(item => {
     let slider = item;
     let isDown = false;
     let startX;
@@ -80,3 +80,12 @@ document.querySelectorAll('.slide_wrap').forEach(item => {
         //console.log(walk);
     });
 });
+
+
+
+// const scrollContainer = document.querySelector(".slider_inner");
+
+// scrollContainer.addEventListener("wheel", (evt) => {
+//     evt.preventDefault();
+//     scrollContainer.scrollLeft += evt.deltaY;
+// });
