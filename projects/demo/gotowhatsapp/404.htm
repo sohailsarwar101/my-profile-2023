@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Goto WhatsApp</title>
+  <meta name="title" content="Goto WhatsApp">
+  <meta name="description" content="A quick way to WhatsApp without saving a number, just type a number and hit enter to jump to WhatsApp without saving a recipient number to your contacts.">
+  <meta name="keywords" content="">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gotowhatsapp.xyz">
+  <meta property="og:title" content="Goto WhatsApp">
+  <meta property="og:description" content="A quick way to WhatsApp without saving a number, just type a number and hit enter to jump to WhatsApp without saving a recipient number to your contacts.">
+  <meta property="og:image" content="./preview.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://gotowhatsapp.xyz">
+  <meta property="twitter:title" content="Goto WhatsApp">
+  <meta property="twitter:description" content="A quick way to WhatsApp without saving a number, just type a number and hit enter to jump to WhatsApp without saving a recipient number to your contacts.">
+  <meta property="twitter:image" content="./preview.png">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00bfa5">
+  <meta name="msapplication-config" content="favicon/browserconfig.xml">
+  <meta name="theme-color" content="#151a20">
+
+  <link rel="stylesheet" href="css/style.css?v=00.30">
+  <link rel="stylesheet" href="css/intlTelInput.css">
+
+  <script src="js/intlTelInput.min.js"></script>
+  <!-- <script defer="" src="js/script.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+
+<body>
+<div class="bg-element"></div>
+  <nav>
+    <a href="/" class="logo">Goto WhatsApp</a>
+    <div class="action-nav">
+      <div>
+      <a href="/#info" class="info">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </a>
+    </div>
+        <div class="drop-warp">
+          <a href="javascript:void(0)" class="share" onclick="userNav()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 share" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path class="share" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+            </svg>
+          </a>
+            <div id="user-nav" class="dropdown-nav slide-top">
+              <ul class="slide-fadein">
+                <li><a href="https://api.whatsapp.com/send?text=Goto WhatsApp - a quick way to WhatsApp without saving a number.%0ahttps://gotowhatsapp.xyz/" target="_blank">Share on WhatsApp</a></li>
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://gotowhatsapp.xyz/" target="_blank">Share on Facebook</a></li>
+                <li><a href="https://twitter.com/intent/tweet?url=https://gotowhatsapp.xyz/&text=Goto WhatsApp - a quick way to WhatsApp without saving a number." target="_blank">Share on Twitter</a></li>
+                <li><a href="javascript:void(0)" onclick="copyUrl()">Copy Link to Share</a></li>
+                <li><a href="javascript:void(0)" class="show-qrcode"  onclick="showQr()">Scan QR Code</a></li>
+              </ul>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+
+        <div class="form-warp">
+            <div class="page-404">
+              <h1>Error 404<br> Page not Found! </h1>
+              <p>The page you are looking for might have been changed or is temporarily unavailable. <br> <br>
+              <a href="/">Goto Homepage</a>
+            </p>
+
+            </div>
+        </div>
+
+      <div class="notification" id="notify">
+        <p>Link copied to clipboard successfully!</p>
+      </div>
+
+      <div class="qr-code-wrap" id="qrcode" onclick="offQr()">
+        <div class="qr-code slide-top">
+          <h3>Goto WhatsApp</h3>
+            <img src="/img/qr.svg" alt="">
+        <p>Scan QR Code to open in mobile/anyother device.</p>
+      </div>
+      </div>
+
+      <footer>
+        <p>Copyright &copy; 2021</p>
+        <div class="theme-switcher">
+          <p class="[ toggle-button ] [ js-mode-toggle ]"><a class="[ toggle-button__text ] [ js-mode-toggle-text ]" href="javascript:void(0);">Enable Dark Mode</a></p>
+        </div>
+      </footer>
+
+
+
+    <script>
+      window.onload = function() {
+      document.getElementById("phone").focus();
+      }
+      const phoneInputField = document.querySelector("#phone");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+      
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+          $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "us";
+            callback(countryCode);
+          });
+        },
+      utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
+
+      var phoneNumber;
+      var msg;
+
+      function submitForm(e) {
+      e.preventDefault();
+
+      phoneNumber = phoneInput.getNumber();
+      msg = encodeURI(document.getElementById('message').value) || '';
+
+      if (!phoneNumber || !phoneInput.isValidNumber()) {
+          var element = document.getElementById("hidden-err");
+          element.classList.toggle("error-msg");
+          setTimeout(function(){ element.classList.remove("error-msg"); }, 4000);
+          return;
+        }
+
+      // location.href = `https://api.whatsapp.com/send?phone=${encodeURI(phoneNumber)}&text=${msg}`;
+      window.open(`https://api.whatsapp.com/send?phone=${encodeURI(phoneNumber)}&text=${msg}`);
+      }
+
+
+      function makeURL() {
+        phoneNumber = phoneInput.getNumber();
+        msg = encodeURI(document.getElementById('message').value) || '';
+
+        if (!phoneNumber || !phoneInput.isValidNumber()) {
+          var element = document.getElementById("hidden-err");
+          element.classList.toggle("error-msg");
+          setTimeout(function(){ element.classList.remove("error-msg"); }, 4000);
+          return;
+        }
+
+        else {
+
+          msglink = `https://api.whatsapp.com/send?phone=${encodeURI(phoneNumber)}&text=${msg}`;
+          document.getElementById("msgurl").value = msglink;
+
+          var copyText = document.getElementById("msgurl");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); /* For mobile devices */
+          navigator.clipboard.writeText(copyText.value);
+          var element = document.getElementById("hidden-suc");
+          element.classList.toggle("suc-msg");
+          setTimeout(function(){ element.classList.remove("suc-msg"); }, 5000);
+        }
+
+      }
+
+    </script>
+
+      <!-- Javascript for theme Switcher  -->
+  <script>
+    document.documentElement.classList.remove("no-js");const STORAGE_KEY="user-color-scheme",COLOR_MODE_KEY="--color-mode",modeToggleButton=document.querySelector(".js-mode-toggle"),modeToggleText=document.querySelector(".js-mode-toggle-text"),modeStatusElement=document.querySelector(".js-mode-status"),getCSSCustomProp=e=>{let t=getComputedStyle(document.documentElement).getPropertyValue(e);return t.length&&(t=t.replace(/\'|"/g,"").trim()),t},applySetting=e=>{let t=e||localStorage.getItem(STORAGE_KEY);t?(document.documentElement.setAttribute("data-user-color-scheme",t),setButtonLabelAndStatus(t)):setButtonLabelAndStatus(getCSSCustomProp("--color-mode"))},toggleSetting=()=>{let e=localStorage.getItem(STORAGE_KEY);switch(e){case null:e="dark"===getCSSCustomProp("--color-mode")?"light":"dark";break;case"light":e="dark";break;case"dark":e="light"}return localStorage.setItem(STORAGE_KEY,e),e},setButtonLabelAndStatus=e=>{modeToggleText.innerText=`Enable ${"dark"===e?"light":"dark"} Mode`,modeStatusElement.innerText=`Current color mode is "${e}"`};modeToggleButton.addEventListener("click",e=>{e.preventDefault(),applySetting(toggleSetting())}),applySetting();
+  </script>
+
+<script>
+  function userNav() {
+    document.getElementById("user-nav").classList.toggle("show");
+  }
+
+  window.onclick = function(event) {
+    if (!event.target.matches('.share')) {
+      var dropdowns = document.getElementsByClassName("dropdown-nav");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  } 
+  </script>
+
+<script>
+  function copyUrl() {
+    navigator.clipboard.writeText("https://gotowhatsapp.xyz/");
+    // alert("Link Copied Successfully!");
+    var element = document.getElementById("notify");
+          element.classList.toggle("notify");
+          setTimeout(function(){ element.classList.remove("notify"); }, 2500);
+  }
+</script>
+
+<script>
+  function showQr() {
+    document.getElementById("qrcode").classList.toggle("show-qr");
+  }
+
+  function offQr() {
+    document.getElementById("qrcode").classList.remove("show-qr");
+  }
+  </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Screen Recorder | inBrowser</title>
+
+    <link rel="stylesheet" href="style/style.css?v=00.0028" />
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header_wrp">
+
+            <div class="logo">
+                <a href="https://inbrowser.xyz/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <path id="logo" data-name="logo"
+                            d="M15,15l-2,5L9,9l11,4Zm0,0,5,5M7.188,2.239l.777,2.9M5.136,7.965l-2.9-.777M13.95,4.05,11.828,6.172M6.171,11.828,4.051,13.95"
+                            transform="translate(-1.013 -1.014)" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </svg>
+                    <p>inBrowser<span>.xyz</span></p>
+                </a>
+            </div>
+
+            <div class="controlls">
+
+                <div class="info">
+                    <a href="https://mrsohail.one/" target="_blank"></a>
+                </div>
+
+                <div class="setting [ toggle-button ] [ js-mode-toggle ]">
+                    <a href="javascript:void(0)" class="setting_icon" id="setting-btn"></a>
+                </div>
+
+
+                <div class="dashboard">
+                    <a href="https://inbrowser.xyz/"></a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="main_wrap" id="main">
+
+        <div class="app_wrap">
+            <div class="app_title">
+                <h1>Screen <span>Recorder</span></h1>
+                <p> simple and quick.</p>
+            </div>
+
+            <div class="video-wrap">
+                <div class="banner">
+                    <h1>A simple, easy to use Screen Recording <span>without</span> <i>Ads</i> or <i>Watermark</i>.</h1>
+                    <img src="img/arrow.svg" alt="">
+                </div>
+            </div>
+
+            <video id="preview" width="100%" height="100%" autoplay muted></video>
+
+            <section class="controls">
+                <div class="controls_wrap">
+                    <button class="" type="button" id="start" title="Start Recording"><span></span></button>
+                    <button class="" type="button" id="stop" title="Stop Recording"></button>
+                    <a class="" id="download" title="Save Recorded Video"></a>
+                    <a href="https://inbrowser.xyz/app/screen-recorder/" class="" id="reset" title="Reset"></a>
+                </div>
+            </section>
+
+            <div class="app_info">
+                <h3>How it works:</h3>
+                <p>
+                    A browser based simple yet powerful, easy to use screen recorder that process videos just in browser. Don't worry about poor network connection and time to download your recorded video, everythig is in your browser, record and save your screen quickly and easily. 
+                </p>
+
+                <h3>Privacy Concerns:</h3>
+                <p>
+                    <b>It doesn't save or process any type of data/information on the server side</b>, it just works in
+                    between user and user's browser. No worries about your privacy consurns, it's just good to go.
+                </p>
+
+                <h3>Availability & Usage:</h3>
+                <p>
+                    It's free to use for everyone and ever.
+                </p>
+            </div>
+
+            <footer>
+                <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script>
+                    <a href="https://inbrowser.xyz/">inBrowser</a>.
+                </p>
+            </footer>
+
+        </div>
+    </div>
+
+        <div class="not_supported" id="msg">
+
+            <span>
+                Unfortunately this Screen Recording app currently not supported to mobile devices/browsers yet!
+                Hopefully
+                will do soon :)
+            </span>
+
+        </div>
+
+
+        <div class="toast_msg"></div>
+
+
+
+
+        <script>
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    
+                var x = document.getElementById("main");
+                x.classList.add("hidden");
+    
+                var y = document.getElementById("msg");
+                y.classList.add("shown");
+            }
+        </script>
+
+      <!-- Javascript for theme Switcher  -->
+      <script>
+        document.documentElement.classList.remove("no-js");const STORAGE_KEY="user-color-scheme",COLOR_MODE_KEY="--color-mode",modeToggleButton=document.querySelector(".js-mode-toggle"),modeToggleText=document.querySelector(".js-mode-toggle-text"),modeStatusElement=document.querySelector(".js-mode-status"),getCSSCustomProp=e=>{let t=getComputedStyle(document.documentElement).getPropertyValue(e);return t.length&&(t=t.replace(/\'|"/g,"").trim()),t},applySetting=e=>{let t=e||localStorage.getItem(STORAGE_KEY);t?(document.documentElement.setAttribute("data-user-color-scheme",t),setButtonLabelAndStatus(t)):setButtonLabelAndStatus(getCSSCustomProp("--color-mode"))},toggleSetting=()=>{let e=localStorage.getItem(STORAGE_KEY);switch(e){case null:e="dark"===getCSSCustomProp("--color-mode")?"light":"dark";break;case"light":e="dark";break;case"dark":e="light"}return localStorage.setItem(STORAGE_KEY,e),e},setButtonLabelAndStatus=e=>{modeToggleText.innerText=`Enable ${"dark"===e?"light":"dark"} Mode`,modeStatusElement.innerText=`Current color mode is "${e}"`};modeToggleButton.addEventListener("click",e=>{e.preventDefault(),applySetting(toggleSetting())}),applySetting();
+      </script>
+
+    <script src="js/index.a3b3fc83.js"></script>
+</body>
+
+</html>

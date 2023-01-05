@@ -100,6 +100,7 @@ html, body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: var(--text-color);
+  scrollbar-width: thin;
 }
 
 body {
@@ -135,7 +136,7 @@ body {
 }
 
 
-.intro, .what_i_do, .bookmarks, .mail_me, .what_i_did {
+.intro, .what_i_do, .bookmarks, .mail_me, .what_i_did, footer {
     max-width: 640px;
     margin: auto;
     padding: 0 20px;
@@ -198,6 +199,7 @@ body {
 }
 
 .service_item {
+    max-width: 440px;
     margin-top: 30px;
 }
 
@@ -232,11 +234,10 @@ body {
 }
 
 .project_item {
-    margin-top: 30px;
-    border-radius: 12px;
-    padding: 20px;
+    margin-top: 35px;
     position: relative;
-    background-color: var(--bg-lighter);
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .project_item h2 {
@@ -251,25 +252,29 @@ body {
 }
 
 .project_item #link_icon {
-    position: absolute;
     width: auto;
     height: auto;
-    top: 15px;
-    right: 13px;
-    transform: rotate(35deg);
+    transform: rotate(90deg);
     color: var(--text-muted);
-    opacity: 0;
     transition: all 0.3s;
+    margin-bottom: -2px;
+    opacity: 0;
 }
 
 .project_item:hover #link_icon {
     opacity: 1;
     transition: all 0.3s;
+    transform: rotate(35deg);
+}
+
+.project_item:hover .pro_icon {
+    filter: none;
+    transition: all 0.3s;
 }
 
 /***** BOOKMARKS **************************/
 .bookmarks {
-    margin: 80px auto auto auto;
+    margin: 70px auto auto auto;
 }
 .bookmarks h1 {
     font-size: 16px;
@@ -277,7 +282,7 @@ body {
 }
 .bookmarks ul {
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 6px;
     padding: 5px 20px;
     margin-top: 15px;
     max-height: 395px;
@@ -382,6 +387,67 @@ background-color: var(--page-bg-color);
 }
 
 .mail_me .button_link {
-    margin: 25px 0 20px 0;
+    margin: 35px 0 20px 0;
 }
-  
+
+
+/* FOOTER ******************************** */
+footer {
+display: flex;
+    justify-content: start;
+    flex-direction: column;
+    margin: 80px auto 70px auto;
+    color: var(--text-muted);
+}
+
+footer p{
+    font-size: 11px;
+    margin-top: 45px;
+}
+
+footer p .rights {
+    opacity: .4;
+}
+
+footer p span a{
+    color: var(--text-muted);
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 400;
+    border: 1px solid var(--border-color);
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.logo-light {
+    width: 20px;
+}
+
+footer .social-links{
+    display: flex;
+    gap: 20px;
+}
+
+footer .social-links li a {
+    color: var(--text-color);
+}
+
+footer .social-links li a:hover {
+    opacity: .8;
+}
+
+footer .social-links li a img{
+    max-width: 22px;
+}
+
+footer .social-links li .behance img{
+    max-width: 20px;
+}
+
+@media (max-width: 600px) {
+    footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px auto 40px auto;
+    }
+}
