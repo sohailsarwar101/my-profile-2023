@@ -231,12 +231,13 @@ body {
 .what_i_did h1 {
     font-size: 16px;
     color: var(--text-muted);
+    margin-bottom: 35px;
 }
 
 .project_item {
-    margin-top: 35px;
+    margin-top: 20px;
     position: relative;
-    padding-bottom: 35px;
+    padding-bottom: 20px;
     border-bottom: 1px solid var(--border-color);
 }
 

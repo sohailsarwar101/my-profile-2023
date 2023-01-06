@@ -35,8 +35,6 @@ textarea {
     -webkit-appearance: none;
 }
 
-*{-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
-
 /* CSS Variables & Theming ********************************/
 :root {
     --color-mode: "light";
@@ -181,21 +179,22 @@ header .header_wrp {
 header .logo a{
     transition: all 0.3s;
     display: flex;
-    gap: 0;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
     text-transform: none;
+    margin-top: -8px;
 }
 
-header .logo a svg{
-    color: var(--theme-color);
-    margin-top: -3px;
-    margin-right: -4px;
+header .logo a img{
+    max-width: 40px;
+    border-radius: 50%;
 }
 
 header .logo a p{
     color: var(--text-muted);
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 400;
 }
 
 header .logo a p span{
@@ -289,15 +288,23 @@ header .setting a:hover, .active{
     header .dashboard {
         margin-top: -1px;
     }
-}
 
+    header .logo a img{
+        max-width: 32px;
+        margin-top: 2px;
+    }
+
+    header .logo a p{
+        display: none;
+    }
+}
 
 .wrap {
     max-width: 900px;
     display: grid;
     grid-template-columns: 3fr 1.3fr;
     gap: 25px;
-    margin: 100px auto 60px auto;
+    margin: 120px auto 60px auto;
 }
 
 .grid_title {
@@ -328,7 +335,7 @@ header .setting a:hover, .active{
     font-weight: 600;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 660px) {
     .app_title {
         flex-direction: column;
         gap: 0px;
@@ -341,16 +348,15 @@ header .setting a:hover, .active{
     }
 
     .app_title h1{
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .app_title p{
-        font-size: 14px;
-        text-align: center;
+        font-size: 15px;
     }
 }
 
-.upload_wrap {
+.text_input {
     width: 100%;
     background-color: var(--page-bg-color-light);
     box-shadow: var(--shadow-large);
@@ -358,124 +364,42 @@ header .setting a:hover, .active{
     padding: 20px 20px 35px 20px;
 }
 
-.upload_wrap .upload_area {
+.text_input h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.text_input h2 span{
+    font-weight: 300;
+    color: var(--text-muted);
+}
+
+.text_input p{
+    font-size: 13px;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+.text_input textarea {
     width: 100%;
-    height: 300px;
-    margin-top: 5px;
+    margin-top: 15px;
     padding: 15px;
     font-size: 16px;
     color: var(--text-color);
-    border: 2px dashed var(--border-input-light);
     background-color: var(--page-bg-color);
+    border: 1px solid var(--border-input-light);
     border-radius: 6px;
+    resize: none;
+    word-wrap: break-word;
     line-height: 1.5;
     transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }
 
-.upload_wrap .upload_area:hover {
-    border: 2px dashed var(--border-input-dark);
+.text_input textarea:focus {
+    border: 1px solid var(--border-input-dark);
     outline: none;
     outline: 0;
     transition: all 0.3s;
-}
-
-#uploadtext {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--text-muted);
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    color: var(--theme-color);
-}
-
-#uploadtext div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--text-muted);
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-}
-
-#uploadtext h4{
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: -5px;
-}
-
-#uploadtext span{
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-#uploadtext .download_info {
-    color: var(--theme-color);
-}
-
-#uploadtext .download_info svg {
-    background-color: var(--page-bg-color-light);
-    padding: 12px;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
-
-#uploadtext .download_info span {
-    color: var(--text-muted);
-    max-width: 260px;
-    margin: 15px auto 0 auto;
-    text-align: center;
-    line-height: 1.2;
-}
-
-#uploadtext .upload_info svg {
-    background-color: var(--page-bg-color-light);
-    padding: 12px;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
-
-#uploadtext .err {
-    color: #f2552c;
-}
-
-#uploadtext .err span{
-    color: var(--text-muted);
-}
-
-.loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #FFF;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    }
-
-@keyframes rotation {
-0% {
-    transform: rotate(0deg);
-}
-100% {
-    transform: rotate(360deg);
-}
 }
 
 .btn_wrap {
@@ -514,18 +438,11 @@ header .setting a:hover, .active{
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
-    opacity: 0.8;
     box-shadow: 0 2px 3px 0px rgba(0,15,23,.2);
 }
 
 .btn_wrap .clear_btn:hover{
     transition: all 0.3s;
-    opacity: 1;
-}
-
-.btn_wrap .disabled_btn {
-    opacity: .6;
-    pointer-events: none;
 }
 
 .qr_side {
@@ -534,7 +451,6 @@ header .setting a:hover, .active{
     box-shadow: var(--shadow-large);
     border-radius: 12px;
     padding: 20px 20px 35px 20px;
-    max-height: 385px;
 }
 
 .qr_side h2{
@@ -544,14 +460,16 @@ header .setting a:hover, .active{
 
 .qr_side p{
     font-size: 13px;
+    margin-top: 10px;
     color: var(--text-muted);
 }
+
 
 #qrcode {
     width:100%;
     height:auto;
     margin-top: 15px;
-    padding: 20px 15px;
+    padding: 15px;
     background-color: #fff;
     border-radius: 5px;
     border: 1px solid var(--border-input-light);
@@ -580,19 +498,22 @@ header .setting a:hover, .active{
     transition: all 0.3s;
 }
 
-.note {
-    font-size: 13px;
+.qr_side .note {
+    font-size: 12px;
     color: var(--text-muted);
     margin-top: 25px;
-    line-height: 1.6;
 } 
 
+#printable {
+    display: none !important;
+    visibility: hidden !important;
+}
 
 .notification {
     position: fixed;
     height: auto;
     width: 320px;
-    top: 35px;
+    top: 20px;
     border-radius: 50px;
     background-color: rgb(0, 0, 0, 0.8);
     box-shadow: 0 0px 15px rgb(0, 0, 0, 0.5);
@@ -613,28 +534,24 @@ header .setting a:hover, .active{
 
   @keyframes slidein {
     0%   {top: -100px;}
-    100%  {top: 35px;}
+    100%  {top: 20px;}
 }
   
 
 
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 660px) {
     body {
         padding: 0 15px;
     }
     .wrap {
         grid-template-columns: 1fr;
         gap: 35px;
-        margin: 70px auto 60px auto;
-    }
-
-    .qr_side {
-        max-height: 100%;
+        margin: 75px auto 60px auto;
     }
 
     #qrcode {
-        padding: 20px;
+        padding: 20px
     }
     
     .btn_wrap {

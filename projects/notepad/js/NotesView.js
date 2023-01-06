@@ -24,7 +24,7 @@ Notes are print friendly, without any watermark or links, only note content will
 
 Sincerely,
 Note Pad,
-inBrowser.xyz</textarea>
+Sohail Sarwar</textarea>
         </div>
         `;
 
