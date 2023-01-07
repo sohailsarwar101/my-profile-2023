@@ -135,19 +135,29 @@ body {
     transition: all 0s;
 }
 
-
-.intro, .what_i_do, .bookmarks, .mail_me, .what_i_did, footer {
+.intro, .what_i_do, .bookmarks, .mail_me, .what_i_did, .bookmarks, footer {
     max-width: 640px;
-    margin: auto;
+    margin: auto auto auto calc(50vw - 300px);
     padding: 0 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .intro, .what_i_do, .bookmarks, .mail_me, .what_i_did, .bookmarks, footer {
+        margin: auto;
+    }
 }
 
 /**** INTRO *******************************/
 .intro img{
-    max-width: 100px;
+    max-width: 80px;
     border-radius: 50%;
+    transition: all .3s;
 }
-
+.intro img:hover{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    transition: all .3s;
+}
 .intro h1 {
     font-weight: 640;
     font-size: 16px;
@@ -156,9 +166,16 @@ body {
 }
 
 .intro h2{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     margin-top: 12px;
+    max-width: 520px;
+}
+
+@media only screen and (max-width: 600px) {
+    .intro img{
+        max-width: 60px;
+    }
 }
 
 /*** HERO SLIDER **********************************/
@@ -171,21 +188,36 @@ body {
     gap: 20px;
     flex-wrap: nowrap;
     margin-top: 15px;
-    overflow-x: scroll;
+    overflow-x: hidden;
     padding-bottom: 7px;
     cursor: grab;
     scrollbar-width: thin;
     overflow-y: hidden;
-    
+    padding: 0 80px 0 calc(50vw - 280px);
  }
  
 .slider_inner .slider_item{
-     height: 300px;
-     min-width: 460px;
+     height: 248px;
+     min-width: 380px;
      background-color: var(--bg-light);
      background-repeat: none;
-     background-size: cover;
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center center;
      position: relative;
+}
+
+@media only screen and (max-width: 800px) {
+    .slider_inner {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .slider_inner .slider_item{
+        height: 195px;
+        min-width: 300px;
+    }
 }
 
 /**** WHAT I DO *************************************/
@@ -212,6 +244,18 @@ body {
     font-size: 14px;
     font-weight: 200;
     margin-top: 7px;
+}
+
+.service_item p img{
+    width: 100%;
+    max-width: 480px;
+    /* filter: grayscale(100%) opacity(50%); */
+    transition: all 0.7s;
+}
+
+.service_item p img:hover{
+    filter: none;
+    transition: all 0.7s;
 }
 
 .button_link {
@@ -275,7 +319,7 @@ body {
 
 /***** BOOKMARKS **************************/
 .bookmarks {
-    margin: 70px auto auto auto;
+    margin-top: 70px;
 }
 .bookmarks h1 {
     font-size: 16px;
@@ -397,7 +441,7 @@ footer {
 display: flex;
     justify-content: start;
     flex-direction: column;
-    margin: 80px auto 70px auto;
+    margin-top: 80px;
     color: var(--text-muted);
 }
 
