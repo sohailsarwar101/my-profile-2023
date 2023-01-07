@@ -153,11 +153,7 @@ body {
     border-radius: 50%;
     transition: all .3s;
 }
-.intro img:hover{
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    transition: all .3s;
-}
+
 .intro h1 {
     font-weight: 640;
     font-size: 16px;
@@ -165,7 +161,7 @@ body {
     color: var(--text-muted);
 }
 
-.intro h2{
+.intro h2 {
     font-size: 16px;
     font-weight: 600;
     margin-top: 12px;
@@ -175,6 +171,10 @@ body {
 @media only screen and (max-width: 600px) {
     .intro img{
         max-width: 60px;
+    }
+
+    .intro h2 {
+        font-size: 15px;
     }
 }
 
@@ -210,6 +210,7 @@ body {
 @media only screen and (max-width: 800px) {
     .slider_inner {
         padding: 0;
+        overflow-x: scroll;
     }
 }
 

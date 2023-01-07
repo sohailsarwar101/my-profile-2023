@@ -10,12 +10,10 @@
     <style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap'); </style> 
 </head>
 <body>
-    
-</body>
 
 <header>
     <div class="intro">
-        <img src="assets/images/sohail-sarwar.png" alt="Sohail's Photo">
+        <img src="assets/images/sohail-sarwar---.png" alt="Sohail's Photo">
         <h1>Sohail Sarwar</h1>
         <h2>I'm a designer, developer, building web user interfaces & digital products with focus on responsive design, accessibility, performance, and cutting-edge tech.</h2>
     </div>
@@ -55,7 +53,7 @@
 
         <div class="service_item">
             <h2>My Stack</h2>
-            <p><img src="/assets/images/my-stack.png" alt=""></p>
+            <p><img src="assets/images/my-stack.png" alt=""></p>
         </div>
 
         <div class="button_link">
@@ -67,35 +65,35 @@
     <div class="what_i_did">
         <h1>Personal Projects</h1>
         
-        <a href="/projects/docshare/" target="_blank">
+        <a href="projects/docshare/" target="_blank">
             <div class="project_item">
                 <h2>docShare <svg id="link_icon" viewBox="0 0 15 15" width="15" height="15"><use xlink:href="#link_arrow"></use></svg></h2>
                 <p>Quick document sharing across the devices with ease.</p>
             </div>
         </a>
 
-        <a href="/projects/screen-recorder/" target="_blank">
+        <a href="projects/screen-recorder/" target="_blank">
             <div class="project_item">
                 <h2>Screen Recorder <svg id="link_icon" viewBox="0 0 15 15" width="15" height="15"><use xlink:href="#link_arrow"></use></svg></h2>
                 <p>A simple, easy to use screen recording without Ads or Watermark.</p>
             </div>
         </a>
 
-        <a href="/projects/clipboard/" target="_blank">
+        <a href="projects/clipboard/" target="_blank">
             <div class="project_item">
                 <h2>ClipBoard Live <svg id="link_icon" viewBox="0 0 15 15" width="15" height="15"><use xlink:href="#link_arrow"></use></svg></h2>
                 <p>Share text between devices anywhere, quickly & easily.</p>
             </div>
         </a>
 
-        <a href="/projects/gotowhatsapp/" target="_blank">
+        <a href="projects/gotowhatsapp/" target="_blank">
             <div class="project_item">
                 <h2>Goto WhatsApp <svg id="link_icon" viewBox="0 0 15 15" width="15" height="15"><use xlink:href="#link_arrow"></use></svg></h2>
                 <p>A quick way to WhatsApp without saving numbers to contact.</p>
             </div>
         </a>
 
-        <a href="/projects/notepad/" target="_blank">
+        <a href="projects/notepad/" target="_blank">
             <div class="project_item">
                 <h2>NotePad <svg id="link_icon" viewBox="0 0 15 15" width="15" height="15"><use xlink:href="#link_arrow"></use></svg></h2>
                 <p>On the go Note Taking Pad, Simple, Quick & Minimal.</p>
@@ -170,6 +168,40 @@
     </g>
 </svg> 
 
+<script>
+    document.querySelectorAll('.slider_inner').forEach(item => {
+    let slider = item;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.style.cursor = 'grabbing';
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+    });
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+    });
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 3; //scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+        //console.log(walk);
+    });
+});
+</script>
+
 <script src="assets/js/app.js"></script>
+
+</body>
 
 </html>
