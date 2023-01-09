@@ -135,14 +135,14 @@ body {
     transition: all 0s;
 }
 
-.intro, .what_i_do, .bookmarks, .mail_me, .what_i_did, .bookmarks, footer {
+.intro, .what_i_do, .bookmarks, .what_i_did, .bookmarks, footer {
     max-width: 640px;
     margin: auto auto auto calc(50vw - 300px);
     padding: 0 20px;
 }
 
 @media only screen and (max-width: 800px) {
-    .intro, .what_i_do, .bookmarks, .mail_me, .what_i_did, .bookmarks, footer {
+    .intro, .what_i_do, .bookmarks, .what_i_did, .bookmarks, footer {
         margin: auto;
     }
 }
@@ -427,8 +427,15 @@ color: var(--text-color);
 background-color: var(--page-bg-color);
 }
 
-/* MAIL ME ******************************** */
-.mail_me .mail_me_wrap {
+/* FOOTER ******************************** */
+footer {
+    margin-top: 80px;
+    color: var(--text-muted);
+    transform: translateY(50px);
+    transition: transform .4s;
+}
+
+footer .mail_me .mail_me_wrap {
     background-color: var(--bg-lighter);
     display: flex;
     flex-direction: column;
@@ -439,7 +446,7 @@ background-color: var(--page-bg-color);
     margin-top: 100px;
 }
 
-.mail_me p {
+footer .mail_me p {
     font-size: 16px;
     font-weight: 200;
     text-align: left;
@@ -447,19 +454,15 @@ background-color: var(--page-bg-color);
     margin: 0;
 }
 
-.mail_me .button_link {
+footer .mail_me .button_link {
     margin: 35px 0 20px 0;
 }
 
-
-/* FOOTER ******************************** */
-footer {
-display: flex;
-    justify-content: start;
-    flex-direction: column;
-    margin-top: 80px;
-    color: var(--text-muted);
+.animate {
+    transform: translateY(0);
+    transition: transform .4s;
 }
+
 
 footer p{
     font-size: 11px;
@@ -480,13 +483,10 @@ footer p span a{
     border-radius: 3px;
 }
 
-.logo-light {
-    width: 20px;
-}
-
 footer .social-links{
     display: flex;
     gap: 20px;
+    margin-top: 60px;
 }
 
 footer .social-links li a {
@@ -505,10 +505,11 @@ footer .social-links li .behance img{
     max-width: 20px;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     footer {
     display: flex;
     justify-content: space-between;
     margin: 60px auto 40px auto;
     }
-}
+} */
+
