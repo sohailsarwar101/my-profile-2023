@@ -207,7 +207,7 @@ body {
      position: relative;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .slider_inner {
         padding: 0;
         overflow-x: scroll;
@@ -250,7 +250,7 @@ body {
 .service_item p img{
     width: 100%;
     max-width: 480px;
-    /* filter: grayscale(100%) opacity(50%); */
+    filter: grayscale(100%) opacity(50%);
     transition: all 0.7s;
 }
 
@@ -262,10 +262,25 @@ body {
 .button_link {
     margin-top: 45px;
     transform: translateY(0);
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-.button_link:hover {
+.button_link a:hover {
     transform: translateY(-1px);
+}
+
+.button_link span{
+    opacity: .5;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.button_link span:hover{
+    opacity: 1;
+    transition: all 0.3s;
 }
 
 /**** WHAT I DID *************************************/
