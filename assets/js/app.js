@@ -50,7 +50,6 @@ function bookmarkData(obj) {
 
 myBookmarks();
 
-
 // Drage to Scroll Image Slider
 document.querySelectorAll('.slider_inner').forEach(item => {
     let slider = item;
