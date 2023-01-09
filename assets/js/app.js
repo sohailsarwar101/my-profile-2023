@@ -1,3 +1,4 @@
+// Fetch Reading List
 async function myBookmarks() {
     const requestURL = './database/bookmarks.json?v=0.013';
     const request = new Request(requestURL);
@@ -50,7 +51,7 @@ function bookmarkData(obj) {
 myBookmarks();
 
 
-
+// Drage to Scroll Image Slider
 document.querySelectorAll('.slider_inner').forEach(item => {
     let slider = item;
     let isDown = false;
@@ -82,6 +83,7 @@ document.querySelectorAll('.slider_inner').forEach(item => {
 });
 
 
+// Click to Copy Email 
 let mail_el = document.querySelector('#copy_email');
 let my_email = mail_el.getAttribute('name');
 mail_el.addEventListener("click", () => {
@@ -96,19 +98,12 @@ mail_el.addEventListener("click", () => {
 });
 
 
-var removeBranding = function() {
-try {
-    var element = document.querySelector("iframe[title*=chat]:nth-child(2)").contentDocument.querySelector(`a[class*=tawk-branding]`)
-
-        if (element) {
-            element.remove()
-        }
-    } catch (e) {}
-}
-
-var tick = 0
-setInterval(removeBranding, tick)
-
+// Animate Footer Block
+const element = document.querySelector('footer');
+const observer = new IntersectionObserver(entries => {
+    element.classList.toggle( 'animate', entries[0].isIntersecting );
+});
+observer.observe(element);
 
 // Javascript for theme Switcher
 document.documentElement.classList.remove("no-js");const STORAGE_KEY="user-color-scheme",COLOR_MODE_KEY="--color-mode",modeToggleButton=document.querySelector(".js-mode-toggle"),modeToggleText=document.querySelector(".js-mode-toggle-text"),getCSSCustomProp=e=>{let t=getComputedStyle(document.documentElement).getPropertyValue(e);return t.length&&(t=t.replace(/\'|"/g,"").trim()),t},applySetting=e=>{let t=e||localStorage.getItem(STORAGE_KEY);t?(document.documentElement.setAttribute("data-user-color-scheme",t),setButtonLabelAndStatus(t)):setButtonLabelAndStatus(getCSSCustomProp("--color-mode"))},toggleSetting=()=>{let e=localStorage.getItem(STORAGE_KEY);switch(e){case null:e="dark"===getCSSCustomProp("--color-mode")?"light":"dark";break;case"light":e="dark";break;case"dark":e="light"}return localStorage.setItem(STORAGE_KEY,e),e},setButtonLabelAndStatus=e=>{modeToggleText.innerText=`Enable ${"dark"===e?"light":"dark"} Mode`};modeToggleButton.addEventListener("click",e=>{e.preventDefault(),applySetting(toggleSetting())}),applySetting();

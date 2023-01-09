@@ -1,7 +1,0 @@
-[24-Nov-2022 07:26:52 UTC] PHP Warning:  unlink(_tmp/a3hgr): No such file or directory in /home/makerwid/inbrowser.xyz/app/clipboard/index.php on line 32
-[24-Nov-2022 07:26:52 UTC] PHP Warning:  unlink(_tmp/a3hgr): No such file or directory in /home/makerwid/inbrowser.xyz/app/clipboard/index.php on line 32
-[05-Dec-2022 05:32:36 UTC] PHP Warning:  unlink(_tmp/imcseo): No such file or directory in /home/makerwid/inbrowser.xyz/app/clipboard/index.php on line 32
-[04-Jan-2023 09:47:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/makerwid/inbrowser.xyz/app/clipboard/index.php:2) in /home/makerwid/inbrowser.xyz/app/clipboard/index.php on line 12
-[04-Jan-2023 09:47:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/makerwid/inbrowser.xyz/app/clipboard/index.php:2) in /home/makerwid/inbrowser.xyz/app/clipboard/index.php on line 13
-[04-Jan-2023 09:47:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/makerwid/inbrowser.xyz/app/clipboard/index.php:2) in /home/makerwid/inbrowser.xyz/app/clipboard/index.php on line 14
-[04-Jan-2023 09:47:58 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/makerwid/inbrowser.xyz/app/clipboard/index.php:2) in /home/makerwid/inbrowser.xyz/app/clipboard/index.php on line 20
