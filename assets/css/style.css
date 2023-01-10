@@ -121,12 +121,12 @@ body {
 .button_link a {
     font-size: 16px;
     background-color: var(--text-color);
-    padding: 10px 20px 11px 20px;
+    padding: 15px 25px 16px 25px;
     text-decoration: none;
     border-radius: 100px;
     color: var(--invers-color);
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 600;
     transition: all 0s;
 }
 
@@ -238,12 +238,12 @@ body {
 
 .service_item h2 {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .service_item p {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 400;
     margin-top: 7px;
 }
 
@@ -303,12 +303,12 @@ body {
 
 .project_item h2 {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .project_item p {
-    font-size: 14px;
-    font-weight: 200;
+    font-size: 13px;
+    font-weight: 400;
     margin-top: 7px;
 }
 
@@ -429,7 +429,7 @@ background-color: var(--page-bg-color);
 
 /* FOOTER ******************************** */
 footer {
-    margin-top: 80px;
+    margin-top: 60px;
     color: var(--text-muted);
     transform: translateY(50px);
     transition: transform .4s;
